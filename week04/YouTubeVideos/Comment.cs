@@ -2,18 +2,18 @@ namespace YouTubeVideos
 {
     public class Comment
     {
-        private string _commentername;
+        private string _commenterName;
         private string _text;
 
-        public Comment(string name, string text)
+        public Comment(string commenterName, string text)
         {
-            _commentername = name;
+            _commenterName = commenterName;
             _text = text;
         }
 
         public string GetCommenterName()
         {
-            return _name;
+            return _commenterName;
         }
 
         public string GetText()
