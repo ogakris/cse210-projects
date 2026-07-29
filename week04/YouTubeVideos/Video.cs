@@ -28,6 +28,26 @@ namespace YouTubeVideos
             return _comments.Count;
         }
 
+        public string GetTitle()
+        {
+            return _title;
+        }
+
+        public string GetAuthor()
+        {
+            return _author;
+        }
+
+        public int GetLength()
+        {
+            return _lengthSeconds;
+        }
+
+        public List<Comment> GetComments()
+        {
+            return _comments;
+        }
+
         public void DisplayVideoInfo()
         {
             Console.WriteLine($"Title: {_title}");
@@ -35,11 +55,12 @@ namespace YouTubeVideos
             Console.WriteLine($"Length: {_lengthSeconds} seconds");
             Console.WriteLine($"Number of Comments: {GetCommentCount()}");
             Console.WriteLine("Comments:");
-            
+
             foreach (Comment comment in _comments)
             {
-                Console.WriteLine($"  - {comment.GetName()}: \"{comment.GetText()}\"");
+                Console.WriteLine($"  - {comment.GetCommenterName()}: \"{comment.GetText()}\"");
             }
+
             Console.WriteLine(new string('-', 50));
         }
     }
