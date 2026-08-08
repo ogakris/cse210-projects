@@ -1,45 +1,68 @@
+
 using System;
 using System.Collections.Generic;
 
 class Program
 {
+    static List<Goal> goals = new List<Goal>();
+    static int score = 0;
+
     static void Main(string[] args)
     {
-        List<Goal> goals = new List<Goal>();
+        int choice = 0;
 
-        goals.Add(new SimpleGoal(
-            "Run a marathon",
-            "Complete a marathon",
-            1000));
-
-        goals.Add(new EternalGoal(
-            "Read scriptures",
-            "Read scriptures every day",
-            100));
-
-        goals.Add(new ChecklistGoal(
-            "Attend the temple",
-            "Attend the temple 10 times",
-            50,
-            10,
-            500));
-
-        foreach (Goal goal in goals)
+        while (choice != 6)
         {
-            Console.WriteLine(goal.GetDetailsString());
-        }
+            Console.WriteLine();
+            Console.WriteLine("Eternal Quest");
+            Console.WriteLine("-------------------------");
+            Console.WriteLine($"Your score: {score}");
+            Console.WriteLine();
 
-        Console.WriteLine();
+            Console.WriteLine("Menu Options:");
+            Console.WriteLine("1. Create New Goal");
+            Console.WriteLine("2. List Goals");
+            Console.WriteLine("3. Record Event");
+            Console.WriteLine("4. Save Goals");
+            Console.WriteLine("5. Load Goals");
+            Console.WriteLine("6. Quit");
 
-        int points = goals[0].RecordEvent();
+            Console.Write("Select a choice: ");
+            choice = int.Parse(Console.ReadLine());
 
-        Console.WriteLine($"You earned {points} points!");
+            Console.WriteLine();
 
-        Console.WriteLine();
+            switch (choice)
+            {
+                case 1:
+                    Console.WriteLine("Create New Goal selected.");
+                    break;
 
-        foreach (Goal goal in goals)
-        {
-            Console.WriteLine(goal.GetDetailsString());
+                case 2:
+                    Console.WriteLine("List Goals selected.");
+                    break;
+
+                case 3:
+                    Console.WriteLine("Record Event selected.");
+                    break;
+
+                case 4:
+                    Console.WriteLine("Save Goals selected.");
+                    break;
+
+                case 5:
+                    Console.WriteLine("Load Goals selected.");
+                    break;
+
+                case 6:
+                    Console.WriteLine("Thank you for using Eternal Quest!");
+                    break;
+
+                default:
+                    Console.WriteLine("Please select a valid option.");
+                    break;
+            }
         }
     }
 }
+```
