@@ -26,9 +26,16 @@ public abstract class Goal
         return _points;
     }
 
+    public abstract bool IsComplete();
+
     public abstract int RecordEvent();
 
     public abstract string GetDetailsString();
 
-    public abstract bool IsComplete();
+    public abstract string GetSaveString();
+
+    public virtual string GetStatus()
+    {
+        return IsComplete() ? "[X]" : "[ ]";
+    }
 }
