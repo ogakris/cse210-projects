@@ -207,10 +207,8 @@ class Program
 
         using (StreamWriter writer = new StreamWriter(filename))
         {
-            // Save the score first.
             writer.WriteLine(_score);
 
-            // Save each goal.
             foreach (Goal goal in _goals)
             {
                 writer.WriteLine(goal.GetSaveString());
@@ -239,13 +237,10 @@ class Program
             return;
         }
 
-        // Clear the current goals.
         _goals.Clear();
 
-        // Load the score.
         _score = int.Parse(lines[0]);
 
-        // Load each goal.
         for (int i = 1; i < lines.Length; i++)
         {
             string[] parts = lines[i].Split('|');
